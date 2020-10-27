@@ -1,7 +1,6 @@
 <?php
 
-
-require 'Controller/Connection.php';
+require 'app/Controller/Connection.php';
 
 ?>
 
