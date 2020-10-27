@@ -1,6 +1,6 @@
 <?php
 
-
+// Class is not used because I went for a public function
 class showUser extends getUser
 {
     public function showAllUsers()
