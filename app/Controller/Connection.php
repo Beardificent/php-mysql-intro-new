@@ -19,15 +19,25 @@ class Connection
         $this->dbpass = "becode123";
         $this->db = "becode";
 
-
+        //ASK WHAT THIS DRIVEROPTIONS IS
         $driverOptions = [
             PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         ];
 
-        $conn = new PDO('mysql:host=' . $this->dbhost . ';dbname=' . $this->db, $this->dbuser, $this->dbpass, $driverOptions);
-        return $conn;
+        try {
+            $dsn = 'mysql:host=' . $this->dbhost . ';dbname=' . $this->db;
+            $pdo = new PDO($dsn, $this->dbuser, $this->dbpass, $driverOptions);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $pdo;
+        } catch (PDOException $e) {
+            echo "connection failed: " . $e->getMessage();
+        }
+
+
+
+
 
     }
 
