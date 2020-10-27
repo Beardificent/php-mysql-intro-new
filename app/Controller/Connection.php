@@ -26,18 +26,11 @@ class Connection
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         ];
 
-        try {
+
             $dsn = 'mysql:host=' . $this->dbhost . ';dbname=' . $this->db;
             $pdo = new PDO($dsn, $this->dbuser, $this->dbpass, $driverOptions);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $pdo;
-        } catch (PDOException $e) {
-            echo "connection failed: " . $e->getMessage();
-        }
-
-
-
-
 
     }
 

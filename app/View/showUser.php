@@ -1,7 +1,7 @@
 <?php
 
 
-class viewUser extends User
+class showUser extends getUser
 {
     public function showAllUsers()
     {
