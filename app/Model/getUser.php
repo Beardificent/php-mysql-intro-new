@@ -29,7 +29,7 @@ class getUser extends Connection
     }
 
 
-
+/*
     public function getAllUsers($firstName, $lastName, $email)
     {
         $sql = "SELECT * FROM student WHERE first_name = ? AND last_name = ? AND email = ?";
@@ -41,6 +41,7 @@ class getUser extends Connection
         }
 
     }
+*/
 
 }
 

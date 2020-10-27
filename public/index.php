@@ -29,7 +29,7 @@ $users = new getUser();
 $users->getUsers();
 /*
 //Adjust parameters to highlight specific database entries (example ALL MALE or everyone named BOB)
-//$users->getAllUsers('cis', 'magito', 'cis.magito@gmail.com');
+//$users->setUsers('cis', 'magito', 'cis.magito@gmail.com');
 */
 
 
