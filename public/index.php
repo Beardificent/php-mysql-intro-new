@@ -10,7 +10,7 @@ error_reporting(E_ALL);
 require '../app/Controller/Connection.php';
 require '../app/Model/getUser.php';
 
-require '../app/View/showUser.php';
+//require '../app/View/showUser.php';
 require '../app/Controller/HomepageController.php';
 require '../app/Controller/InfoController.php';
 
@@ -24,6 +24,13 @@ $testObj->getAllUsers();
 */
 
 
-$users = new showUser();
-$users->showAllUsers();
+
+$users = new getUser();
+$users->getUsers();
+/*
+//Adjust parameters to highlight specific database entries (example ALL MALE or everyone named BOB)
+//$users->getAllUsers('cis', 'magito', 'cis.magito@gmail.com');
+*/
+
+
 

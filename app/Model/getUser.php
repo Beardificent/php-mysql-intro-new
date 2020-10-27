@@ -19,13 +19,27 @@ class getUser extends Connection
     }
  */
 
-    public function getAllUsers()
+    public function getUsers()
     {
         $sql = "SELECT * FROM student";
         $result = $this->connect()->query($sql);
         while($student = $result->fetch()){
             echo $student['first_name'] . ' ' . $student['last_name'] . '<br/>';
         }
+    }
+
+
+
+    public function getAllUsers($firstName, $lastName, $email)
+    {
+        $sql = "SELECT * FROM student WHERE first_name = ? AND last_name = ? AND email = ?";
+        $result = $this->connect()->prepare($sql);
+        $result->execute([$firstName, $lastName, $email]);
+        $students = $result->fetchAll();
+        foreach ($students as $student) {
+            echo $student['first_name'] . ' ' . $student['last_name'] . '<br/>';
+        }
+
     }
 
 }
