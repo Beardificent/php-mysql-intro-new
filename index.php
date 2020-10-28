@@ -7,12 +7,12 @@ ini_set("display_startup_errors", '1');
 error_reporting(E_ALL);
 
 //include all your controllers here
-require '../app/Controller/Connection.php';
-require '../app/Model/getUser.php';
+require 'Model/Connection.php';
+require 'Controller/insertController.php';
 
-//require '../app/View/showUser.php';
-require '../app/Controller/HomepageController.php';
-require '../app/Controller/InfoController.php';
+
+
+
 
 
 //you could write a simple IF here based on some $_GET or $_POST vars, to choose your controller
@@ -23,10 +23,11 @@ $testObj = new getUser();
 $testObj->getAllUsers();
 */
 
+$controller = new insertController();
+$controller->render($_GET, $_POST);
 
+//meerdere controllers nodig voor meerdere paginas.
 
-$users = new getUser();
-$users->getUsers();
 /*
 //Adjust parameters to highlight specific database entries (example ALL MALE or everyone named BOB)
 //$users->setUsers('cis', 'magito', 'cis.magito@gmail.com');
