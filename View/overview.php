@@ -10,7 +10,7 @@ Anything complex should be calculated in the model -->
                 '. $student['first_name'] . ' ' . $student['last_name'] . '
     </div>
             <div class="card-body">
-                <h4 class="card-title"><a href="profile.php?user=' . $student['id'] . '">Profile</a></h4>
+                <h4 class="card-title"><a href="/?user=' . $student['id'] . '">Profile</a></h4>
            <p class="card-text">' . $student['email'] . '</p>
             </div>
             </div>';
