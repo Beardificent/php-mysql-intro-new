@@ -25,10 +25,6 @@ class ProfileController {
             $lastName = $_POST['last_name'];
             $email = $_POST['email'];
             $hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
-            $id = '';
-            if( isset( $_GET['id'])) {
-                $id = $_GET['id'];
-            }
             $connection->updateUser($firstName, $lastName, $email,$hash, $id);
         }
     }
