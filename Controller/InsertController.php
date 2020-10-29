@@ -26,6 +26,7 @@ class insertController
                 }
                 //end new
                 $obj = new Connection();
+                //MAYBE ADD AN IF HERE TO CHECK IF ID EXISTS, IF SO UPDATE?
                 $obj->insertAllData($firstName,$lastName,$email, $hash);
             }
         }

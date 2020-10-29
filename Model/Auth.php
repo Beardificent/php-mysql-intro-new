@@ -1,7 +1,8 @@
 <?php
 
 
-class Auth {
+class Auth
+{
 
     public function checkform()
     {
@@ -15,10 +16,5 @@ class Auth {
 
             die('Please fill all required fields!');
         }
-
-        if ($data['password'] !== $data['passwordConfirm']) {
-            die('Password and Confirm password should match!');
-        }
-
     }
 }
