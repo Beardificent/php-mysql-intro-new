@@ -6,7 +6,6 @@ class insertController
     public function render (array $GET, array $POST)
     {
         $path = 'View/register.php';
-        var_dump($POST);
         $this->checkForm($POST);
         require $path;
 }
@@ -18,10 +17,10 @@ class insertController
                 $lastName = $data['last_name'];
                 $email = $data['email'];
                 //new
-                $password = $data['password'];
-                $passwordConfirm = $data['passwordConfirm'];
-                if($password == $passwordConfirm){
-                    $hash = PASSWORD_HASH($password, PASSWORD_DEFAULT); // make $hash so you can give that to your password in the query
+                //don't make a variable of the passwordconfirm -> is saved otherwise
+                $password = password_hash($data['password'], PASSWORD_DEFAULT);
+                if(password_verify($data['passwordConfirm'], $password)){
+                    $hash = $password; // make $hash so you can give that to your password in the query
                 } else {
                     echo "password should be equal to password confirm.";
                 }
