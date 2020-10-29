@@ -19,9 +19,12 @@ if(isset($_GET['page']) && $_GET['page'] == 'overview'){
 } elseif (isset($_GET['user'])){
     require 'Controller/profileController.php';
     $controller = new ProfileController();
-}else{
+}elseif (isset($_GET['page']) && $_GET['page'] == 'register'){
     require 'Controller/InsertController.php';
     $controller = new insertController();
+} else {
+    require 'Controller/LoginController.php';
+    $controller = new LoginController();
 }
 
 

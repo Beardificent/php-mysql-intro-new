@@ -1,5 +1,4 @@
 
-
 <form action="" method="post">
     <p>
         <label for="emailAddress">Email Address:</label><br/>
@@ -10,4 +9,8 @@
         <input type="text" name="password" id="password">
     </p>
     <input type="submit" value="Submit">
+</form>
+
+<form action="register.php" method="post">
+    <input type="submit" value="Register">
 </form>

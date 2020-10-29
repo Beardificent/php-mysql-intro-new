@@ -4,7 +4,7 @@ class ProfileController {
 
 
     public function render (array $GET, array $POST)
-    {var_dump($GET);
+    {
         //new connection
         $connection = new Connection();
         //get function from connection.php.
