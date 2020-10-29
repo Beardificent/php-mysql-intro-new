@@ -5,7 +5,7 @@ class insertController
 {
     public function render (array $GET, array $POST)
     {
-        $path = 'View/insert.php';
+        $path = 'View/register.php';
         var_dump($POST);
         $this->checkForm($POST);
         require $path;
@@ -17,18 +17,17 @@ class insertController
                 $firstName = $data['first_name'];
                 $lastName = $data['last_name'];
                 $email = $data['email'];
-                $obj = new Connection();
-                $obj->insertAllData($firstName,$lastName,$email);
-/*
-                if (empty($firstName) || empty($lastName) || empty($email)) {
-                    $status = "All fields are mandatory.";
+                //new
+                $password = $data['password'];
+                $passwordConfirm = $data['passwordConfirm'];
+                if($password == $passwordConfirm){
+                    $hash = PASSWORD_HASH($password, PASSWORD_DEFAULT); // make $hash so you can give that to your password in the query
                 } else {
-                    if (!preg_match('/^[\p{L} ]+$/u', $firstName) || !preg_match('/^[\p{L} ]+$/u', $lastName)) {
-                        $status = "Check your spelling.";
-                    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                        $status = "Please enter a valid email";
-                    }
-                }*/
+                    echo "password should be equal to password confirm.";
+                }
+                //end new
+                $obj = new Connection();
+                $obj->insertAllData($firstName,$lastName,$email, $hash);
             }
         }
 
